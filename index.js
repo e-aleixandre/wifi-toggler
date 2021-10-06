@@ -58,7 +58,7 @@ log.info("Running...");
     await page.waitForNetworkIdle();
     await page.click(radius_1);
     await page.click(radius_2);
-    await page.click("#Btn_cancel_WlanBasicAdConf");
+    await page.click("#Btn_apply_WlanBasicAdConf");
 
     await page.waitForSelector('.succHint', { visible: true}).then(() => {
         // Finished
