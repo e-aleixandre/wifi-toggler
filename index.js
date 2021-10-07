@@ -20,6 +20,13 @@ for (let i = 2; i < process.argv.length; ++i)
         enable = false;
 }
 
+// Checking if .env is configured
+if (!process.env.LOGIN_PASS || !process.env.LOGIN_PASS || !process.env.ROUTER_URL)
+{
+    log.error("Configure .env data before running the program.");
+}
+
+
 log.info("Running...");
 
 (async () => {
@@ -36,7 +43,7 @@ log.info("Running...");
 
     if (!user_input || !pass_input || !login_submit)
     {
-        console.log("An element of ");
+        log.error("An element from the login form isn't reachable.")
         await browser.close();
         return;
     }
